@@ -1,0 +1,29 @@
+<form class="ui large form segment">
+  <h3 class="ui header">Add a User</h3>
+
+  <div class="field">
+    <label for="name">Name:</label>
+    <input name="name" [(ngModel)]="user.name"> <!-- changed -->
+  </div>
+  <div class="field">
+    <label for="age">Age:</label>
+    <input name="age" [(ngModel)]="user.age"> <!-- changed -->
+  </div>
+  <div class="field">
+    <label for="address">Address:</label>
+    <input name="address" [(ngModel)]="user.address"> <!-- changed -->
+  </div>
+
+  <!-- added this button -->
+  <button (click)="addArticle()" class="ui positive right floated button">
+    Submit link
+  </button>
+
+</form>
+
+<ul>
+  <li *ngFor="let user of userList">
+    <app-user-item [user]="user" [userAge]="user"></app-user-item>
+  </li>
+</ul>
+<!-- <app-user-item></app-user-item> -->
